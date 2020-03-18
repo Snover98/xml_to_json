@@ -1,16 +1,13 @@
 import os
-from glob import glob
-
-import click
 
 import xmltodict
 import json
 
-from collections import OrderedDict
-
+import click
 from tqdm import tqdm
 from multiprocessing import Pool
 
+from collections import OrderedDict
 from typing import List, Optional
 
 
