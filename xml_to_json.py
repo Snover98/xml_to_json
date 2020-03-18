@@ -86,7 +86,7 @@ def convert_xml_files_to_json(path: str, recursion_depth: Optional[int], delete_
         pbar.close()
 
     elif path.endswith('.xml'):
-        convert_xml_file_to_json(path)
+        convert_xml_file_to_json(path, delete_xmls)
 
     else:
         raise Exception("ERROR: The inputted path in neither a directory nor an XML file!")
