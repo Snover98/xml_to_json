@@ -44,6 +44,7 @@ def is_file_within_legal_depth(root_dir: str, file: str, recursion_depth: Option
 
 def all_xmls(root_directory_path: str, recursion_depth: Optional[int]) -> str:
     for root, dirs, files in os.walk(root_directory_path):
+        # remove from our search tree all hidden directories and those that exceed the recursion depth
         sub_dirs_to_remove: List[str] = [sub_dir for sub_dir in dirs if
                                          is_filename_hidden(sub_dir.split('\\')[-1]) or not is_file_within_legal_depth(
                                              root_directory_path, r"{}\{}".format(root, sub_dir), recursion_depth)]
