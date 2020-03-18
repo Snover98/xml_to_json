@@ -63,7 +63,7 @@ def all_xmls(root_directory_path: str, recursion_depth: Optional[int]) -> str:
 @click.option('-d', '--delete-xmls', 'delete_xmls', is_flag=True,
               help="Whether or not we want to delete the xml files after the conversion")
 @click.option('-w', '--num-workers', 'num_workers', type=click.IntRange(1, 20), default=1,
-              help="The number of workers that will calculate the means and stds of the pictures")
+              help="The number of workers that will convert files")
 def convert_xml_files_to_json(path: str, recursion_depth: Optional[int], delete_xmls: bool, num_workers: int):
     """
     converts XML files to JSON files
