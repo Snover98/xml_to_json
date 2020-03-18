@@ -11,7 +11,7 @@ from collections import OrderedDict
 from tqdm import tqdm
 from multiprocessing import Pool
 
-from typing import List, Optional, Iterable
+from typing import List, Optional
 
 
 def xml_path_to_dict(xml_file_path: str) -> OrderedDict:
