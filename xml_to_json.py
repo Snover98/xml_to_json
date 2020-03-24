@@ -13,16 +13,16 @@ from typing import List, Optional
 
 def xml_path_to_dict(xml_file_path: str) -> OrderedDict:
     with open(xml_file_path, 'r') as xml_file:
-        data: str = xml_file.read()
+        data = xml_file.read()
 
     return xmltodict.parse(data)
 
 
 def convert_xml_file_to_json(xml_file_path: str, delete_xmls: bool):
-    values_dict: OrderedDict = xml_path_to_dict(xml_file_path)
-    json_string: str = json.dumps(values_dict, sort_keys=True, indent=4)
+    values_dict = xml_path_to_dict(xml_file_path)
+    json_string = json.dumps(values_dict, sort_keys=True, indent=4)
 
-    json_file_path: str = xml_file_path.split('.')[0] + '.json'
+    json_file_path = xml_file_path.split('.')[0] + '.json'
 
     with open(json_file_path, 'w+') as json_file:
         json_file.write(json_string)
