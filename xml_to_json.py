@@ -22,7 +22,7 @@ def convert_xml_file_to_json(xml_file_path: str, delete_xmls: bool):
     values_dict = xml_path_to_dict(xml_file_path)
     json_string = json.dumps(values_dict, sort_keys=True, indent=4)
 
-    json_file_path = xml_file_path.split('.')[0] + '.json'
+    json_file_path = '.'.join(xml_file_path.split('.')[:-1])
 
     with open(json_file_path, 'w+') as json_file:
         json_file.write(json_string)
